@@ -4,19 +4,16 @@ This project is a python implementation of a Fully Convolutional Network (FCN) f
 
 ## How Does It Work?
 
-Semantic segmentation is the task of assigning meaning to parts of an image based on different types of objects, such as cars, pedestrians, traffic lights, 
+Semantic segmentation is the task of assigning meaning to parts of an image based on different types of objects, such as cars, pedestrians, traffic lights, trees, etc. At the very basic level, this task concerns itself with assigning each pixel in the image to a target class. Consequently, this problem can be solved using a classifier. However, a conventional [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network) can't be used as it loses spatial information as we progress from *convolutional* to *fully connected* layers. To combat this loss of spatial information, we can use a [*Fully Convolutional Network (FCN)*](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_segmentation.html).
 
-![Path Planning](./images/intro.png)
+An FCN consists of two parts: *encoder* & *decoder*. The encoder extracts features from the image while the decoder up-scales the size of the encoder output back to the original input size. 
 
-Particularly, the path planning problem is concerned with the modules highlighted in the above image.  
+![FCN Architecture](./images/fcn_architecture.png)
 
-**Note:** This particular implementation of the project is a simplified version of the path planner. A full blown implementation (in progress) can be viewed [here](https://github.com/wkhattak/Path-Planning-v2-Work-In-Progress).
 
-The current implementation of the path planner can be summarised as below:
+A pre-trained model, such as [VGG](https://arxiv.org/pdf/1409.1556v6.pdf) can be used as an encoder. This is followed by *1x1 Convolution* followed by *Transposed Convolutions* that up-scale the image size back to original. Another important aspect of FCN is the notion of *skip connections* whereby the output from encoder is connected to layers in the decoder, which helps the network to make more precise segmentation decisions.
 
-1. Find if ego car (autonomous car) is close to any non-ego car.
-2. Take action e.g. slow down to keep following or change lane if possible.
-3. Generate trajectory either for changing lane or staying in the same lane.
+![FCN Architecture](./images/fcn_architecture2.png)
 
 ## Pertinent Information
 
