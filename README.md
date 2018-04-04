@@ -13,7 +13,11 @@ An FCN consists of two parts: *encoder* & *decoder*. The encoder extracts featur
 
 A pre-trained model, such as [VGG](https://arxiv.org/pdf/1409.1556v6.pdf) can be used as an encoder. This is followed by *1x1 Convolution* followed by *Transposed Convolutions* that up-scale the image size back to original. Another important aspect of FCN is the notion of *skip connections* whereby the output from encoder is connected to layers in the decoder, which helps the network to make more precise segmentation decisions.
 
-![FCN Architecture](./images/fcn_architecture2.png)
+![FCN Architecture Detailed](./images/fcn_architecture2.png)
+
+The below image shows an example output from the FCN:
+
+![FCN Output](./images/fcn_output.png)
 
 ## Pertinent Information
 
