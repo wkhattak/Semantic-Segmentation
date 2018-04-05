@@ -38,11 +38,20 @@ The project's FCN implementation is based on the FCN architecture as descried [h
 One of the most important hyperparameter was the *epochs*. It was observed that increasing the number of epochs resulted in reducing the loss as shown by the following images & loss graphs:
 
 |Epochs = 5|Epochs = 15|Epochs = 25|Epochs = 25 (without decay)|Epochs = 50| 
-|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|
 |![5](./images/5/um_000000.png)|![15](./images/15/um_000000.png)|![25](./images/25/um_000000.png)|![25_no_decay](./images/25_wo_decay/um_000000.png)|![50](./images/50/um_000000.png)|
+|![5](./images/5/um_000010.png)|![15](./images/15/um_000010.png)|![25](./images/25/um_000010.png)|![25_no_decay](./images/25_wo_decay/um_000010.png)|![50](./images/50/um_000010.png)|
+|![5](./images/5/um_000030.png)|![15](./images/15/um_000030.png)|![25](./images/25/um_000030.png)|![25_no_decay](./images/25_wo_decay/um_000030.png)|![50](./images/50/um_000030.png)|
+|![5](./images/5/um_000085.png)|![15](./images/15/um_000085.png)|![25](./images/25/um_000085.png)|![25_no_decay](./images/25_wo_decay/um_000085.png)|![50](./images/50/um_000085.png)|
+|![5](./images/5/um_000095.png)|![15](./images/15/um_000095.png)|![25](./images/25/um_000095.png)|![25_no_decay](./images/25_wo_decay/um_000095.png)|![50](./images/50/um_000095.png)|
 
+![Loss 5](./images/5_epoch_loss_chart.png)
 
+![Loss 15](./images/15_epoch_loss_chart.png)
 
+![Loss 25](./images/25_epoch_loss_chart.png)
+
+![Loss 50](./images/50_epoch_loss_chart.png)
 
 ## Segmented Images
 ## Segmented Movie
