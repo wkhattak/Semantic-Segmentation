@@ -59,14 +59,6 @@ The resulting segmented images are located at `/runs/50_epoch_w_decay.zip`
 ## Segmented Movie
 As a challenge, the semantic segmentation pipeline was further applied to a video clip. The resulting video clip is located at `/video/solidWhiteRight_processed.mp4`
 
-## Basic Build Instructions
-
-1. Clone this repo.
-2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./path_planning`.
-
-
 ## Dependencies
 
 * Python 3
