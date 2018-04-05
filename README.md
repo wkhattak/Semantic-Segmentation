@@ -24,13 +24,22 @@ The below image shows an example output from the FCN:
 ### Architecture
 The project's FCN implementation is based on the FCN architecture as descried [here](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). The encoder part of the FCN is based on a custom VGG16 provided by Udacity. After loading this pre-trained model, the reference architecture is replicated by adding 1x1 convolutions, up-sampling & creating skip connections between layers 3 & 7 and layers 4 & 7. Next the model is trained using the [Kitti Road dataset]([http://www.cvlibs.net/datasets/kitti/eval_road.php)  with *L2 Regularization* and *decaying learning rate*. Using decaying learning rate results in gradual decrease in the learning rate that helps with the learning process and decreasing loss.
 
+## Hyperparameters
+
+| Hyperparameter | Value | Description   		| 
+|:---:|:---:|:-------------------------------| 			
+| Learning Rate | 0.001 |Model's initial learning rate.|
+| Learning Rate Decay | 0.90 |Percentage by which the learning rate decreases over time.|
+| Decay Steps | 50 |Number of steps (batches) after which the decay rate is applied.|
+| L2 Regularization | 0.001 |L2 Regularization (for preventing over fitting) value.|
+| Batch Size | 5 |Number of images used for training during each batch (each epoch consists of N batches = ceiling(total images/batch size).|
+| Epochs | 50 |Number of training cycles.|
+
+One of the most important hyperparameter was the *epochs*. It was observed that increasing the number of epochs resulted in reducing the loss as shown by the following images & loss graphs:
 
 
-## Rubric Points
-
-### The code compiles correctly.
-Yes, as shown by the following image:
-
+## Segmented Images
+## Segmented Movie
 
 
 ## Basic Build Instructions
