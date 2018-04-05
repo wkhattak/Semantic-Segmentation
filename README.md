@@ -37,9 +37,10 @@ The project's FCN implementation is based on the FCN architecture as descried [h
 
 One of the most important hyperparameter was the *epochs*. It was observed that increasing the number of epochs resulted in reducing the loss as shown by the following images & loss graphs:
 
-|Epochs = 5|Epochs = 15|Epochs = 25|Epochs = 50| 
+|Epochs = 5|Epochs = 15|Epochs = 25|Epochs = 25 (without decay)|Epochs = 50| 
 |:---:|:---:|:---:|:---:|
-|![5](./5/images/um_000000.png)|![5](./images/5/um_000000.png)|![5](./images/5/um_000000.png)|![5](./images/5/um_000000.png)|![5](./images/5/um_000000.png)|
+|![5](./images/5/um_000000.png)|![15](./images/15/um_000000.png)|![25](./images/25/um_000000.png)|![25_no_decay](./images/25_wo_decay/um_000000.png)|![50](./images/50/um_000000.png)|
+
 
 
 
