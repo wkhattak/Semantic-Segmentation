@@ -22,7 +22,7 @@ The below image shows an example output from the FCN:
 ## FCN Implementation
 
 ### Architecture
-The project's FCN implementation is based on the FCN architecture as descried [here](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). The encoder part of the FCN is based on a custom VGG16 provided by Udacity. After loading this pre-trained model, the reference architecture is replicated by adding 1x1 convolutions, up-sampling & creating skip connections between layers 3 & 7 and layers 4 & 7. Next the model is trained using the [Kitti Road dataset]([http://www.cvlibs.net/datasets/kitti/eval_road.php)  with *L2 Regularization* and *decaying learning rate*. Using decaying learning rate results in gradual decrease in the learning rate that helps with the learning process and decreasing loss.
+The project's FCN implementation is based on the FCN architecture as descried [here](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). The encoder part of the FCN is based on a custom VGG16 provided by Udacity. After loading this pre-trained model, the reference architecture is replicated by adding 1x1 convolutions, up-sampling & creating skip connections between layers 3 & 7 and layers 4 & 7. Next the model is trained using the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php)  with *L2 Regularization* and *decaying learning rate*. Using decaying learning rate results in gradual decrease in the learning rate that helps with the learning process and decreasing loss.
 
 ### Hyperparameters
 
@@ -54,8 +54,10 @@ One of the most important hyperparameter was the *epochs*. It was observed that 
 ![Loss 50](./images/50_epoch_loss_chart.png)
 
 ## Segmented Images
-## Segmented Movie
+The resulting segmented images are located at `/runs/50_epoch_w_decay.zip`
 
+## Segmented Movie
+As a challenge, the semantic segmentation pipeline was further applied to a video clip. The resulting video clip is located at `/video/solidWhiteRight_processed.mp4`
 
 ## Basic Build Instructions
 
@@ -67,38 +69,44 @@ One of the most important hyperparameter was the *epochs*. It was observed that 
 
 ## Dependencies
 
-* cmake >= 3.5
-  * All OSes: [click here for installation instructions](https://cmake.org/install/)
-* make >= 4.1
-  * Linux: make is installed by default on most Linux distros
-  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
-  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* gcc/g++ >= 5.4
-  * Linux: gcc / g++ is installed by default on most Linux distros
-  * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
-* [uWebSockets](https://github.com/uWebSockets/uWebSockets)
-  * Run either `install-mac.sh` or `install-ubuntu.sh`.
-  * If you install from source, checkout to commit `e94b6e1`, i.e.
-    ```
-    git clone https://github.com/uWebSockets/uWebSockets 
-    cd uWebSockets
-    git checkout e94b6e1
-    ```
+* Python 3
+* TensorFlow
+* NumPy
+* SciPy
+* moviepy
+* [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php)
+  
 
 ## Usage
 
-Follow the build instructions above. Once the program is running, start the simulator. You should see a *connected!!!* message upon successful connection between the simulator and the c++ program. Hit the *Start button*. 
+Run the following command to run the project:
+
+`python main.py` 
 
 ## Directory Structure
 
-* **data:** Directory containing a list of waypoints that go all the way around the track
+* **data:** Directory containing downloaded vgg16 model and the Kitti road dataset
 * **images:** Directory containing writeup images
-* **src:** Directory containing c++ source files
-* **CMakeLists.txt:** File containing compilation instructions
+* **model:** Directory containing trained FCN model
+* **runs:** Directory containing segmented images
+* **video:** Directory containing segmented video clip
+* **helper.py:** Python code containing helper functions
+* **main.py:** Python code containing functions for training & inference
+* **project_tests.py:** Python code containing unit tests
 * **README.md:** Project readme file
-* **install-mac.sh:** Script for installing uWebSockets on Macintosh
-* **install-ubuntu.sh:** Script for installing uWebSockets on Ubuntu
+
+## Troubleshooting
+
+**ffmpeg**
+
+NOTE: If you don't have ffmpeg installed on your computer you'll have to install it for moviepy to work. If this is the case you'll be prompted by an error in the notebook. You can easily install ffmpeg by running the following in a code cell in the notebook.
+
+```
+import imageio
+imageio.plugins.ffmpeg.download()
+```
+
+Once it's installed, moviepy should work.
 
 ## License
 
